@@ -12,4 +12,8 @@ export default function bindRoutes(app) {
   // app.get('/routes', RoutesController.index);
   app.get('/trips', TripsController.index);
   app.get('/trip/:id', TripsController.show);
+  app.get('/', (req, res) => {
+    console.log('root route request came in');
+    res.send('this os working');
+  });
 }

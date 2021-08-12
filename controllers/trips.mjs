@@ -2,6 +2,7 @@
 // that we can make db queries inside
 export default function initTripsController(db) {
   const index = (request, response) => {
+    console.log('trips route request came in');
     db.Trip.findAll()
       .then((trips) => {
         response.send({ trips });
