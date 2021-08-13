@@ -4,11 +4,11 @@ GET Data:
 
 <!-- Get the trips from db. Not filtered by the user id -->
 
-app.get('/trips', TripsController.index);
+app.get('/trips');
 
 <!-- get all the routes from a particular trip id -->
 
-app.get('/trip/:id', TripsController.show);
+app.get('/trip/:id');
 
 POST Data:
 
@@ -17,8 +17,10 @@ POST Data:
 app.post('/trips',
 {
 tripName,
-createdAt,
-updatedAt,
+
+<!-- tripStart,
+updatedAt, -->
+
 }
 );
 
@@ -26,5 +28,8 @@ updatedAt,
 
 app.post('/trip/:id', {
 routeName,
-difficulty,
+
+<!-- difficulty,
+isCompleted:false -->
+
 });
