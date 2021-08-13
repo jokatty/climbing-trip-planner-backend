@@ -11,7 +11,10 @@ export default function bindRoutes(app) {
 
   // app.get('/routes', RoutesController.index);
   app.get('/trips', TripsController.index);
+  app.post('/trips', TripsController.create);
   app.get('/trip/:id', TripsController.show);
+  // create a new route(location) under a trip id.
+  app.post('/trip/:id', TripsController.createRoute);
   app.get('/', (req, res) => {
     console.log('root route request came in');
     res.send('this os working');

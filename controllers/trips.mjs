@@ -9,6 +9,20 @@ export default function initTripsController(db) {
       })
       .catch((error) => console.log(error));
   };
+  // create a new trip
+  const create = async (request, response) => {
+    const { tripName, createdAt, updatedAt } = request.body;
+    try {
+      const postResponse = await db.Trip.create({
+        name: tripName,
+        createdAt,
+        updatedAt,
+      });
+      response.send(postResponse);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   //  get all the routes for one trip id
   const show = (request, response) => {
@@ -23,10 +37,26 @@ export default function initTripsController(db) {
     }).catch((error) => console.log(error));
   };
 
+  // add a route to a trip using that trip's trip id
+  const createRoute = async (request, response) => {
+    const { routeName, difficulty } = request.body;
+    try {
+      const postResponse = await db.Route.create({
+        name: routeName,
+        difficulty,
+      });
+      response.send(postResponse);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   // return all methods we define in an object
   // refer to the routes file above to see this used
   return {
     index,
     show,
+    create,
+    createRoute,
   };
 }
