@@ -11,12 +11,10 @@ export default function initTripsController(db) {
   };
   // create a new trip
   const create = async (request, response) => {
-    const { tripName, createdAt, updatedAt } = request.body;
+    const { tripName } = request.body;
     try {
       const postResponse = await db.Trip.create({
         name: tripName,
-        createdAt,
-        updatedAt,
       });
       response.send(postResponse);
     } catch (error) {
@@ -44,6 +42,7 @@ export default function initTripsController(db) {
       const postResponse = await db.Route.create({
         name: routeName,
         difficulty,
+        isCompleted: false,
       });
       response.send(postResponse);
     } catch (error) {
