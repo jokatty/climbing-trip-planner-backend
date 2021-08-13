@@ -1,6 +1,6 @@
 import { Sequelize } from 'sequelize';
+import url from 'url';
 import allConfig from '../config/config.js';
-
 import initRouteModel from './route.mjs';
 import initTripModel from './trip.mjs';
 import initUserModel from './user.mjs';
