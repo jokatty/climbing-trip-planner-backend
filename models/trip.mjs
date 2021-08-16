@@ -18,6 +18,14 @@ export default function initTripModel(sequelize, DataTypes) {
           key: 'id',
         },
       },
+      startDate: {
+        allowNull: false,
+        type: DataTypes.DATE,
+      },
+      endDate: {
+        allowNull: false,
+        type: DataTypes.DATE,
+      },
       customRouteOrder: {
         type: DataTypes.STRING,
       },

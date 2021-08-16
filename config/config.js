@@ -1,6 +1,7 @@
 module.exports = {
   development: {
-    username: 'jyotikattani',
+    // username: 'jyotikattani',
+    username: 'eddiejpot',
     password: null,
     database: 'climbing_development',
     host: '127.0.0.1',
