@@ -37,6 +37,14 @@ module.exports = {
           key: 'id',
         },
       },
+      start_date: {
+        allowNull: false,
+        type: Sequelize.DATE,
+      },
+      end_date: {
+        allowNull: false,
+        type: Sequelize.DATE,
+      },
       custom_route_order: {
         type: Sequelize.STRING,
       },
