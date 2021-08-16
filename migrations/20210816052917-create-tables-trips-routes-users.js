@@ -30,6 +30,12 @@ module.exports = {
       name: {
         type: Sequelize.STRING,
       },
+      start_date: {
+        type: Sequelize.DATE,
+      },
+      end_date: {
+        type: Sequelize.DATE,
+      },
       user_id: {
         type: Sequelize.INTEGER,
         references: {
